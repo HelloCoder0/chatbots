@@ -9,19 +9,16 @@ const {
   searchFAQs
 } = require('../controllers/faqController');
 
-
 router.route('/')
   .get(getFAQs)
   .post(createFAQ);
 
-
-router.route('/search')  
+router.route('/search')
   .get(searchFAQs);
 
-
 router.route('/:id')
-    .get(getFAQ)
-    .put(updateFAQ)
-    .delete(deleteFAQ);
+  .get(getFAQ)
+  .put(updateFAQ)
+  .delete(deleteFAQ);
 
 module.exports = router;

@@ -1,4 +1,4 @@
-const FAQ = require('../model/FAQ');
+const FAQ = require('../models/FAQ');
 
 // @desc    Get all FAQs
 // @route   GET /api/faqs
@@ -51,7 +51,7 @@ exports.getFAQ = async (req, res) => {
 
 // @desc    Create FAQ
 // @route   POST /api/faqs
-// @access  Public (will add auth later)
+// @access  Public
 exports.createFAQ = async (req, res) => {
   try {
     const { question, answer, keywords, category } = req.body;
@@ -78,7 +78,7 @@ exports.createFAQ = async (req, res) => {
 
 // @desc    Update FAQ
 // @route   PUT /api/faqs/:id
-// @access  Public (will add auth later)
+// @access  Public
 exports.updateFAQ = async (req, res) => {
   try {
     const faq = await FAQ.findByIdAndUpdate(
@@ -109,7 +109,7 @@ exports.updateFAQ = async (req, res) => {
 
 // @desc    Delete FAQ
 // @route   DELETE /api/faqs/:id
-// @access  Public (will add auth later)
+// @access  Public
 exports.deleteFAQ = async (req, res) => {
   try {
     const faq = await FAQ.findByIdAndDelete(req.params.id);
